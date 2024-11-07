@@ -1,0 +1,145 @@
+
+
+1) What are the eight primitive data types with their max value supported by the Java programming language?
+-> byte - 1 byte (8bits)
+          maximum value - 127
+   short - 2 bytes (16bits)
+          maximum value - 32,767
+   int - 4 bytes (32bits)
+         maximum value - 2,147,483,647
+   long - 8 bytes (64bits)
+          maximum value - 2^63-1
+   float - 4 bytes (32bits)
+           maximum value - approx 3.4 * 10^38
+   double - 8 bytes (64bits)
+            maximum value - approx 1.8 * 10^308
+   char - 2 bytes (16bits)
+          maximum value - 65,535(Unicode value 0xFFFF)
+   boolean - 1 or 2 bytes
+             maximum value - True or False
+
+2) Which of the following option leads to the portability and security of Java?
+-> Bytecode is executed by JVM
+
+3) _____ is used to find and fix bugs in the Java programs.
+-> JDB
+
+4) What does the expression float a = 35 / 0 return?
+-> Infinity
+
+
+
+5) Evaluate the following Java expression, if x=3, y=5, and z=10:
+   ++z + y - y + z + x++
+-> 25
+
+6) Which component is used to compile, debug and execute java program?
+-> JDK
+
+7) Which component is responsible to run java program?
+-> JVM
+
+8) Which statement is true about java?
+-> Platform independent programming language
+
+9) Which of the below is invalid identifier with the main method?
+-> private
+
+10) What is use of interpreter?
+-> They read high level code and execute them
+
+11) What is the stored in the object obj in following lines of Java code?
+    box obj;
+-> NULL
+
+12) output ?? class main_class
+        {
+            public static void main(String args[])
+            {
+                int x = 9;
+                if (x == 9)
+                {
+                    int x = 8;
+                    System.out.println(x);
+                }
+            }
+        }
+-> Compilation error
+
+13) What will be the output of the following Java program?
+
+        class box
+        {
+            int width;
+            int height;
+            int length;
+        }
+        class mainclass
+        {
+            public static void main(String args[])
+            {
+                 box obj = new box();
+                 obj.width = 10;
+                 obj.height = 2;
+                 obj.length = 10;
+                 int y = obj.width * obj.height * obj.length;
+                 System.out.print(y);
+            }
+        }
+-> 200
+
+14) What will be the output of the following Java program?
+->  class box
+       {
+           int width;
+           int height;
+           int length;
+       }
+       class mainclass
+       {
+           public static void main(String args[])
+           {
+               box obj1 = new box();
+               box obj2 = new box();
+               obj1.height = 1;
+               obj1.length = 2;
+               obj1.width = 1;
+               obj2 = obj1;
+               System.out.println(obj2.height);
+           }
+       }
+-> 1
+
+15)   What will be the output of the following Java program?
+
+        class box
+        {
+             int width;
+             int height;
+             int length;
+        }
+         class mainclass
+         {
+             public static void main(String args[])
+             {
+                 box obj = new box();
+                 System.out.println(obj);
+             }
+         }
+-> classname@hashcode in hexadecimal form
+
+16) Which of the following is not a segment of memory in java?
+-> Register Segment
+
+17) What is JVM?
+-> Interpreter
+
+18) Which of the following is not a memory classification in java?
+-> Temporary
+
+19) Classes and Methods are stored in which space?
+-> Permanent space
+
+20) Where is String Pool stored?
+-> Java Heap
+
