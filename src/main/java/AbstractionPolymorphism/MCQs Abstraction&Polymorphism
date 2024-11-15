@@ -1,0 +1,169 @@
+1. What is the output of the following program?
+
+
+   class GFG
+   {
+       protected void getData()
+       {
+           System.out.println("Inside GFG");
+       }
+   }
+   class GeeksforGeeks extends GFG
+   {
+       protected void getData()
+       {
+           System.out.println("Inside GeeksforGeeks");
+       }
+   }
+
+   public class Test
+   {
+       public static void main(String[] args)
+       {
+           GFG obj = new GeeksforGeeks();
+           obj.getData();
+       }
+-> Inside GeeksforGeeks
+
+2.  What is the output of the following program?
+
+
+   class Test
+   {
+       void myMethod()
+       {
+           System.out.println("GeeksforGeeks");
+       }
+   }
+   public class Derived extends Test
+   {
+       void myMethod()
+       {
+           System.out.println("GFG");
+       }
+
+       public static void main(String[] args)
+       {
+           Derived object = new Test();
+           object.myMethod();
+       }
+   }
+-> Compilation error
+
+3. What is the output of the following program?
+
+
+   class GFG
+   {
+       protected void getData()
+       {
+           System.out.println("Inside GFG");
+       }
+   }
+   class GeeksforGeeks extends GFG
+   {
+       protected void getData()
+       {
+           System.out.println("Inside GeeksforGeeks");
+       }
+
+       protected void getValue()
+       {
+           System.out.println("GeeksforGeeks");
+       }
+   }
+
+   public class Test
+   {
+       public static void main(String[] args)
+       {
+           GFG obj = new GeeksforGeeks();
+           obj.getValue();
+       }
+   }
+-> Compilation error
+
+4. What is the output of the following program?
+
+
+   interface GFG
+   {
+       void myMethod();
+       void getInfo();
+   }
+
+   abstract class Geeks implements GFG
+   {
+       void getData()
+       {
+           System.out.println("GFG");
+       }
+   }
+
+   public class Test extends Geeks
+   {
+       public void myMethod()
+       {
+           System.out.println("GeeksforGeeks");
+       }
+       public void getInfo()
+       {
+           System.out.println("Geeks");
+       }
+
+       public static void main(String[] args)
+       {
+           Geeks obj = new Test();
+           obj.getInfo();
+       }
+   }
+-> Geeks
+
+5.  What is the output of the following program?
+
+
+   class Test
+   {
+       public void gfg()
+       {
+           System.out.println("GeeksforGeeks");
+       }
+   }
+   public class Derived extends Test
+   {
+       public void gfg()
+       {
+           System.out.println("GFG");
+       }
+       public static void main(String[] args)
+       {
+           Derived obj = new Test();
+           obj.gfg();
+       }
+   }
+-> Compilation error
+
+6. What does the word 'Polymorphism' mean in Greek?
+-> Many forms
+
+7. When Overloading does not occur?
+-> More than one method with same name, same number of parameters and type but different signature
+
+8. Which concept of Java is achieved by combining methods and attribute into a class?
+-> Encapsulation.
+
+9. Which type of polymorphism is achieved through method overriding in Java?
+-> Run-time polymorphism
+
+10. What is the requirement for method overriding in Java?
+-> The subclass method must have the same name, return type, and parameters as the superclass method.
+
+11. Which method signature in Java allows you to override a superclass method while changing the return type?
+-> Changing the method access modifier.
+
+12. What is the method hiding in Java?
+-> It occurs when a subclass defines a static method with the same name as a static method in the superclass.
+
+13. What is the role of the ‘instanceof' operator in Java?
+-> To check if an object is an instance of a specific class or interface.
+

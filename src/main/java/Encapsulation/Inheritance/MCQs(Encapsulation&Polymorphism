@@ -1,0 +1,284 @@
+
+
+1. What is encapsulation in Java?
+-> The process of combining data and methods into a single unit.
+
+2. How can you restrict access to the attributes of a class in Java?
+-> By declaring them as private.
+
+3. In encapsulation, how can you access the attributes of a class?
+-> By using the public methods provided by the class.
+
+4. Which of the following encapsulation levels provides the widest accessibility in Java?
+-> public.
+
+5. What is the parent class of all classes in Java?
+-> Object.
+
+6. What is the purpose of 'super' keyword in Java?
+-> To call the constructor of the parent class.
+
+7. What is a multilevel inheritance in Java?
+-> A class extends another class which also extends another class.
+
+8. What is the output of the following Java program?
+   class Automobile {
+       private String drive() {
+           return "Driving vehicle";
+       }
+   }
+
+   class Car extends Automobile {
+       protected String drive() {
+           return "Driving car";
+       }
+   }
+
+   public class ElectricCar extends Car {
+
+       @Override
+       public final String drive() {
+           return "Driving an electric car";
+       }
+
+       public static void main(String[] wheels) {
+           final Car car = new ElectricCar();
+           System.out.print(car.drive());
+       }
+   }
+-> The code does not compile.
+   explanation - drive() method is declared as private in the superclass hence, it cant be overridden by the subclasses.
+
+9. Look at the following code and choose the right option for the word :
+   // Shape.java
+   public class Shape {
+       protected void display() {
+           System.out.println("Display-base");
+       }
+   }
+   // Circle.java
+   public class Circle extends Shape { <
+       < access - modifier > void display() {
+           System.out.println("Display-derived");
+       }
+-> public and protected both can be used.
+
+10. What will be the output of the following java program.
+    class Base {
+        public Base() {
+            System.out.println("Base");
+        }
+    }
+
+    class Derived extends Base {
+        public Derived() {
+            System.out.println("Derived");
+        }
+    }
+
+    class DeriDerived extends Derived {
+        public DeriDerived() {
+            System.out.println("DeriDerived");
+        }
+    }
+
+    public class Test {
+        public static void main(String[] args) {
+            Derived b = new DeriDerived();
+        }
+    }
+-> Base
+   Derived
+   DeriDerived.
+
+11. What is th output of the following Java program.
+    class One{
+            public One(){
+                    System.out.print("One,");
+            }
+    }
+    class Two extends One{
+            public Two(){
+                    System.out.print("Two,");
+            }
+    }
+    class Three extends Two{
+            public Three(){
+                    System.out.print("Three");
+            }
+    }
+
+    public class Test{
+
+            public static void main(String[] args){
+                    Three three = new Three();
+            }
+    }
+-> One,Two,Three.
+
+12. Consider the following program.
+    class Base {
+        public Base() {
+            System.out.print("Base ");
+        }
+
+        public Base(String s) {
+            System.out.print("Base: " + s);
+        }
+    }
+
+    class Derived extends Base {
+        public Derived(String s) {
+            super(); // Stmt-1
+            super(s); // Stmt-2
+            System.out.print("Derived ");
+        }
+    }
+
+    class Test {
+        public static void main(String[] args) {
+            Base base = new Derived("Hello ");
+        }
+    }
+    Select three correct options from the following list:
+    a) Removing Stmt-1 will make the program compilable and it will print the following: Base Derived.
+    b) Removing Stmt-1 will make the program compilable and it will print the following: Base: Hello Derived.
+    c) Removing Stmt-2 will make the program compilable and it will print the following: Base Derived.
+    d) Removing both Stmt-1 and Stmt-2 will make the program compilable and it will print the following: Base Derived.
+    e) Removing both Stmt-1 and Stmt-2 will make the program compilable and it will print the following: Base: Hello Derived.
+-> a) Removing Stmt-1 will make the program compilable and it will print the following: Base Derived.
+   c) Removing Stmt-2 will make the program compilable and it will print the following: Base Derived.
+   e) Removing both Stmt-1 and Stmt-2 will make the program compilable and it will print the following: Base: Hello Derived.
+
+13. "6. What is the output of the following Java program?
+    abstract class Car {
+        static {
+            System.out.print(""1"");
+        }
+
+        public Car(String name) {
+            super();
+            System.out.print(""2"");
+        }
+
+        {
+            System.out.print(""3"");
+        }
+    }
+
+    public class BlueCar extends Car {
+        {
+            System.out.print(""4"");
+        }
+
+        public BlueCar() {
+            super(""blue"");
+            System.out.print(""5"");
+        }
+        public static void main(String[] gears) {
+            new BlueCar();
+        }
+    }
+-> 12354
+
+14. What is the output of the following Java program?
+    class Math {
+        public final double secret = 2;
+    }
+
+    class ComplexMath extends Math {
+        public final double secret = 4;
+    }
+
+    public class InfiniteMath extends ComplexMath {
+        public final double secret = 8;
+
+        public static void main(String[] numbers) {
+            Math math = new InfiniteMath();
+            System.out.print(math.secret);
+        }
+    }
+-> 2 - final fields in Java are not inherited - instead, they are shadowed by the fields in the subclass.
+
+15. What is the output of the following Java program
+    public class Test {
+        public void print(Integer i) {
+            System.out.println("Integer");
+        }
+
+        public void print(int i) {
+            System.out.println("int");
+        }
+
+        public void print(long i) {
+            System.out.println("long");
+        }
+
+        public static void main(String args[]) {
+            Test test = new Test();
+            test.print(10);
+        }
+    }
+-> int.
+
+16. What is the output of the following Java program?
+    class One{
+    	public static void print(){
+    		System.out.println(""1"");
+    	}
+    }
+
+    class Two extends One{
+    	public static void print(){
+    		System.out.println(""2"");
+    	}
+    }
+
+    public class Test{
+    	public static void main(String args[]){
+    		One one = new Two();
+    		one.print();
+    	}
+    }
+-> 1.
+
+17. What is the output of the following Java program?
+    class Parent{
+    	public void className(){
+    		System.out.println(""Parent"");
+    	}
+    }
+    class Child extends Parent{
+    	void className(){
+    		System.out.println(""Child"");
+    	}
+    }
+
+    public class Test{
+
+    	public static void main(String[] args){
+    		Parent parent = new Child();
+    		parent.className();
+    	}
+    }
+-> Child
+
+18. What is the output of the following Java program?
+    class Demo{
+    	public Demo(int i){
+    		System.out.println(""int"");
+    	}
+
+    	public void Demo(short s){
+    		System.out.println(""short"");
+    	}
+    }
+
+    public class Test{
+
+    	public static void main(String[] args){
+    		short s = 10;
+    		Demo demo = new Demo(s);
+    	}
+    }
+-> Compile-time error.
